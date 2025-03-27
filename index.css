@@ -1,0 +1,52 @@
+/* body{background: #000;} */
+.main_flex{
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   position: absolute;
+   top:0;
+   bottom: 0;
+   left: 0;
+   right: 0;
+   margin: auto;
+   
+}
+
+
+.text_xray{
+   color: red;               
+   text-shadow: 
+       -1px -1px 0 #fff,  
+        -1px -1px 0 #fff,  
+       -1px  1px 0 #fff,  
+        -1px  1px 0 #fff;  /* Creates a red outline */
+   transition: 0.3s ease-in-out; /* Smooth transition */
+}
+
+.back{
+   padding: 10px 20px;
+}
+
+
+
+.x_ray_effect_text{
+   font-weight: bolder;
+   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+   color: hsl(0, 69%, 57%);
+}
+
+
+/* custom mouse */
+#circularcursor{
+   position: absolute;
+   width: 40px;
+   height: 40px;
+   background: #000;
+   border-radius: 50%;
+   top: var(--y, 0);
+   left: var(--x, 0);
+   transform: translate(-50%, -50%);
+   z-index: 2;
+   mix-blend-mode: difference;
+   transition: transform .2s;
+}
