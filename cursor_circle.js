@@ -2,11 +2,7 @@ const cursor = document.getElementById("circularcursor");
 const xRayEffect = document.querySelector('.x_ray_effect_text')
 const backgroundTxt = document.querySelector('.back')
 
-
-console.log(xRayEffect);
-
 document.addEventListener("DOMContentLoaded", function () {
-   // const cursor = document.getElementById("circularcursor");
    let mouseX = 0
    let mouseY = 0;
    let currentX = 0
@@ -27,18 +23,15 @@ document.addEventListener("DOMContentLoaded", function () {
    });
 
    function animateCursor() {
-      // Use easing to make movement smoother
       currentX += (mouseX - currentX);
       currentY += (mouseY - currentY);
 
-      // Apply transform for better performance
       cursor.style.transform = `translate3d(${currentX}px, ${currentY}px, 0)`;
 
-      // Continue animation if movement is still happening
       if (cursor) {
          requestAnimationFrame(animateCursor);
       } else {
-         isAnimating = false; // Stop animation loop if no movement
+         isAnimating = false; 
       }
    }
 });
