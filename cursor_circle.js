@@ -2,38 +2,15 @@ const cursor = document.getElementById("circularcursor");
 const xRayEffect = document.querySelector('.x_ray_effect_text')
 const backgroundTxt = document.querySelector('.back')
 
-document.addEventListener("DOMContentLoaded", function () {
-   let mouseX = 0
-   let mouseY = 0;
-   let currentX = 0
-   let currentY = 0;
-   var isAnimating = false;
+document.addEventListener("DOMContentLoaded", () => {
+   if (!cursor) return;
 
-   document.addEventListener("mousemove", function (e) {
+   document.addEventListener("mousemove", (e) => {
       cursor.style.display = "flex";
       document.body.style.cursor = "none";
-
-      mouseX = e.pageX;
-      mouseY = e.pageY;
-
-      if (!isAnimating) {
-         isAnimating = true;
-         requestAnimationFrame(animateCursor);
-      }
+      cursor.style.left = `${e.pageX}px`;
+      cursor.style.top = `${e.pageY}px`;
    });
-
-   function animateCursor() {
-      currentX += (mouseX - currentX);
-      currentY += (mouseY - currentY);
-
-      cursor.style.transform = `translate3d(${currentX}px, ${currentY}px, 0)`;
-
-      if (cursor) {
-         requestAnimationFrame(animateCursor);
-      } else {
-         isAnimating = false; 
-      }
-   }
 });
 
 
